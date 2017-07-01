@@ -8,6 +8,6 @@ Please see [here](LICENSE.md) for licensing information.
 
 Contributors:
 
-  * Matt van der Meer ([mvdm](www.vandermeerlab.org))
+  * Matt van der Meer ([mvdm](http://www.vandermeerlab.org))
 
 
