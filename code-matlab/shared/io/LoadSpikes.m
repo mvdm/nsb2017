@@ -42,7 +42,7 @@ cfg_def.tsflag = 'sec';
 cfg_def.load_questionable_cells = 0;
 cfg_def.min_cluster_quality = 5;
 cfg_def.getRatings = 0;
-cfg_def.getTTnumbers = 1;
+cfg_def.getTTnumbers = 0;
 cfg_def.verbose = 1;
 cfg_def.uint = '32';
 
