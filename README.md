@@ -10,4 +10,11 @@ Contributors:
 
   * Matt van der Meer ([mvdm](http://www.vandermeerlab.org))
 
+Taylor Rupp
+Michigan State University
+Pheromone communication, courtship behavior, fluid mechanics
+
+James P Roach
+Univeristy of Michigan
+Neural network mechanistics of learning and memory, sleep
 
