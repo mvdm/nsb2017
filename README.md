@@ -18,6 +18,7 @@ James P Roach
 Univeristy of Michigan
 Neural network mechanistics of learning and memory, sleep
 
+<<<<<<< HEAD
 Deepa Ramamurthy
 UC Davis
 Cross-modal plasticity, development, touch
@@ -25,6 +26,13 @@ Cross-modal plasticity, development, touch
 M.Jerome Beetz
 Goethe University Frankfurt
 Orientation, Topographic map plasticity
+=======
+Sally Kim
+University of North Carolina at Chapel Hill
+Brain connectivity between visual  cortex and prefrontal cortex
+
+
+>>>>>>> c6989d72e1367b2aa30760ac12cfed8b999942d2
 
 
 
