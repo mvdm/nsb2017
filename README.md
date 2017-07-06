@@ -18,3 +18,13 @@ James P Roach
 Univeristy of Michigan
 Neural network mechanistics of learning and memory, sleep
 
+Deepa Ramamurthy
+UC Davis
+Cross-modal plasticity, development, touch
+
+M.Jerome Beetz
+Goethe University Frankfurt
+Orientation, Topographic map plasticity
+
+
+
