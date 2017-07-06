@@ -18,6 +18,10 @@ James P Roach
 Univeristy of Michigan
 Neural network mechanistics of learning and memory, sleep
 
+Sally Kim
+University of North Carolina at Chapel Hill
+Brain connectivity between visual  cortex and prefrontal cortex
+
 
 
 
