@@ -163,8 +163,10 @@ switch cfg.nDim
 
         [tc.occ_hist,~,~,tc.pos_idx] = histcn(tuning_mat,cfg.binEdges{1},cfg.binEdges{2});     
         
-        tc.no_occ_idx = find(tc.occ_hist < cfg.minOcc);
-        tc.good_idx = find(tc.occ_hist >= cfg.minOcc);
+        %tc.no_occ_idx = find(tc.occ_hist < cfg.minOcc);
+        tc.no_occ_idx = tc.occ_hist < cfg.minOcc;
+        %tc.good_idx = find(tc.occ_hist >= cfg.minOcc);
+        tc.good_idx = tc.occ_hist >= cfg.minOcc;
 
         if ~isempty(cfg.smoothingKernel)
             tc.occ_hist = conv2(tc.occ_hist,cfg.smoothingKernel,'same');
@@ -198,7 +200,7 @@ switch cfg.nDim
         end
 
         tc.binEdges = cfg.binEdges;
-        for iDim = 1:nDim
+        for iDim = 1:cfg.nDim
             tc.binCenters{iDim} = cfg.binEdges{iDim}(1:end-1)+median(diff(cfg.binEdges{iDim}))/2;
             tc.nBins{iDim} = length(tc.binEdges{iDim})-1;
         end
