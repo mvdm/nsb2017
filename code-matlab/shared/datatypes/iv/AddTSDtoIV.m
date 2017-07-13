@@ -52,6 +52,10 @@ switch cfg.method
         for iI = 1:length(data_temp)
             data_temp(iI) = mean(data_in(tstart_idx(iI):tend_idx(iI)));
         end
+    case 'min'
+        for iI = 1:length(data_temp)
+            data_temp(iI) = min(data_in(tstart_idx(iI):tend_idx(iI)));
+        end
 end
 
 iv.usr.(cfg.label) = data_temp;
