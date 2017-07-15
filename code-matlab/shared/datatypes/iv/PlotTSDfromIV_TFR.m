@@ -1,5 +1,5 @@
-function PlotTSDfromIV_TFR(cfg_in,iv_in,ft_in)
-% function PlotTSDfromIV_TFR(cfg,iv_in,ft_in)
+function TFR_out = PlotTSDfromIV_TFR(cfg_in,iv_in,ft_in)
+% function TFR = PlotTSDfromIV_TFR(cfg,iv_in,ft_in)
 %
 % plot ft_in data spectrograms and raw data as defined by iv_in
 %
@@ -7,6 +7,10 @@ function PlotTSDfromIV_TFR(cfg_in,iv_in,ft_in)
 %
 % ft_in: input fieldtrip data to plot from
 % iv: intervals to plot data for
+%
+% OUTPUTS (optional):
+%
+% TFR = 1 x nIntervals cell array with spectrograms
 %
 % CFG OPTIONS:
 %
@@ -18,6 +22,7 @@ function PlotTSDfromIV_TFR(cfg_in,iv_in,ft_in)
 % MvdM 2014-11-12
 
 cfg_def              = [];
+cfg_def.plot         = 1;
 cfg_def.twin         = [-0.5 0.5];
 cfg_def.dt           = 0.01;
 cfg_def.method       = 'mtmconvol';
@@ -79,20 +84,27 @@ ft_in = ft_selectdata(temp_cfg,ft_in);
 nppf = prod(cfg.subplotdim);
 for iI = 1:length(ft_in.trial)
     
-    figno = ceil(iI./nppf);
-    plotno = mod(iI-1,nppf) + 1;
-    maximize;
-    
-    figure(figno);
-    subtightplot(cfg.subplotdim(1),cfg.subplotdim(2),plotno);
-    
-    imagesc(TFR.time,TFR.freq,sq(TFR.powspctrm(iI,1,:,:))); axis xy
-    caxis(cfg.clim)
-    hold on;
-    
-    temp_data = rescale(ft_in.trial{iI},cfg.foi(1),cfg.foi(end));
-    % note, may need alternative option that doesn't rescale
-    plot(ft_in.time{iI},temp_data,'LineWidth',1,'Color',[1 1 1]);
-
-    axis off; axis tight; 
+    TFR_out{iI} = sq(TFR.powspctrm(iI,1,:,:));
+  
+    if cfg.plot
+        
+        figno = ceil(iI./nppf);
+        plotno = mod(iI-1,nppf) + 1;
+        maximize;
+        
+        figure(figno);
+        subtightplot(cfg.subplotdim(1),cfg.subplotdim(2),plotno);
+        
+        
+        imagesc(TFR.time,TFR.freq,TFR_out{iI}); axis xy
+        caxis(cfg.clim)
+        hold on;
+        
+        % temp_data = rescale(ft_in.trial{iI},cfg.foi(1),cfg.foi(end));
+        % note, may need alternative option that doesn't rescale
+        % plot(ft_in.time{iI},temp_data,'LineWidth',1,'Color',[1 1 1]);
+        
+        axis off; axis tight;
+        
+    end
 end
