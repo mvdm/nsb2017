@@ -31,6 +31,10 @@ Sally Kim
 University of North Carolina at Chapel Hill
 Brain connectivity between visual  cortex and prefrontal cortex
 
+David Jelke
+Dartmouth College
+Exercise, rap, cinema
+
 
 >>>>>>> c6989d72e1367b2aa30760ac12cfed8b999942d2
 
